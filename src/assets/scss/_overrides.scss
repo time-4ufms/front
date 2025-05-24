@@ -1,0 +1,22 @@
+li[data-sonner-toast] {
+  width: 100%;
+  div[data-content] {
+    width: 100%;
+    div[data-title] {
+      width: 100%;
+    }
+  }
+}
+
+.remove-map-buttons {
+  .gmnoprint, .gm-control-active {
+    display: none !important;
+  }
+}
+
+.available-students-modal-card .v-label {
+  --v-medium-emphasis-opacity: 1;
+}
+.available-students-modal-card .v-input__details {
+  display: none;
+}

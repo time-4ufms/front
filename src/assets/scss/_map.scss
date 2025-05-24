@@ -1,0 +1,51 @@
+.gm-style .gm-style-iw-c {
+  padding: 0;
+}
+
+.gm-style-iw-d {
+  overflow: auto !important; // Precisa desse fera
+}
+
+.map-base-dialog-box {
+  width: 100%;
+  max-height: 300px;
+  overflow: auto;
+  padding: 0 14px 14px;
+}
+
+.marker-of-cluster {
+  .map-base-dialog-box {
+    display: none;
+  }
+
+  .map-base-dialog-box.active {
+    display: block;
+  }
+
+  .controller-content {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    padding: 0 14px 14px;
+
+    .slider-button {
+      border-radius: 50%;
+      background-color: $slider-button-background-color !important;
+      color: $slider-button-color !important;
+
+      &.left {
+        transform: rotateY(180deg);
+      }
+
+      &.active {
+        background-color: $slider-active-button-background-color !important;
+        color: $slider-active-button-color !important;
+      }
+    }
+  }
+}
+
+.pin-counter {
+  font-weight: bold;
+}

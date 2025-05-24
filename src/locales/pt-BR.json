@@ -1,0 +1,831 @@
+{
+  "app_name": "Trackland",
+  "enums": {
+    "vehicles": {
+      "micro": "Micro ônibus",
+      "small": "Ônibus pequeno",
+      "medium": "Ônibus médio",
+      "big": "Ônibus grande",
+      "articulated": "Ônibus articulado"
+    },
+    "direction": {
+      "forward": "Ida",
+      "back": "Volta",
+      "forward+back": "Ida+Volta",
+      "back+forward": "Volta+Ida"
+    },
+    "scheduleType": {
+      "conventional": "Convencional",
+      "intermediary": "Intermediário"
+    }
+  },
+  "views": {
+    "login": {
+      "title": "Acessar Roteirizador",
+      "fields": {
+        "email": "Informe o seu email",
+        "password": "Sua senha de acesso"
+      },
+      "buttons": {
+        "submit": "Acessar plataforma"
+      }
+    },
+    "external_login": {
+      "wait_message": "Aguarde, estamos te autenticando..."
+    },
+    "students": {
+      "actions": {
+        "addStudents": "Adicionar alunos"
+      },
+      "feedback": {
+        "success": "Alunos adicionados com sucesso",
+        "updateSuccess": "Aluno atualizado com sucesso"
+      },
+      "modal": {
+        "title": "Adicionar alunos",
+        "content": "Adicione alunos manualmente ou use a opção de upload via arquivo CSV para múltiplos cadastros. Certifique-se de que o arquivo está no formato correto. Escolha a melhor opção para você!",
+        "actions": {
+          "downloadExample": "Download da planilha modelo",
+          "uploadByCSV": "Fazer upload de arquivo CSV",
+          "manualRegistration": "Cadastro Manual"
+        }
+      }
+    },
+    "searchalunos":{
+      "buscar":{
+        "title":"Alunos",
+        "name":"Nome",
+        "matricula":"Matrícula",
+        "ra":"RA",
+        "city":"Cidade",
+        "state":"Estado",
+        "shift":"Turno",
+        "reason":"Motivo",
+        "PCD":"PCD",
+        "wheelchair":"Cadeirante",
+        "school":"Escola"
+      }
+
+    },
+    "routes": {
+      "costsReports": {
+        "title": "Relatório de Custos",
+        "name": "Relatório de Custos {id}",
+        "reportFileName": "relatorio-de-custos-{costsReportId}",
+        "headers": {
+          "id": "id",
+          "name": "Nome da relatório",
+          "routerizations": "Roteirizações",
+          "createdAt": "Gerado em",
+          "status": "Status",
+          "actions": "Ações"
+        },
+        "status": {
+          "pending": "Gerando",
+          "failed": "Falha",
+          "done": "Concluído",
+          "text": {
+            "done": "Relatório gerado com sucesso",
+            "failed": "Falha ao gerar relatório de custos. Tente gerar novamente um novo relatório para poder visualizar.",
+            "pending": "Seu relatório de custos está sendo gerado. Aguarde mais um pouco para que você possa visualizar."
+          }
+        },
+        "actions": {
+          "downloadReport": "Baixar relatório"
+        },
+        "emptyList": {
+          "title": "Nenhum relatório de custos cadastrado",
+          "subtitle": "Gere um relatório de custos selecionando uma ou mais roteirizações e clicando no botão para gerar relatório de custos."
+        }
+      },
+      "routerizations": {
+        "title": "Roteirizador",
+        "buttons": {
+          "submit": "Gerar rotas",
+          "costsReport": "Gerar relatório de custos"
+        },
+        "filterEmpty": "Nenhuma linha encontrada para o filtro aplicado",
+        "emptyRouteList": {
+          "title": "Você não possui nenhuma rota cadastrada",
+          "subtitle": "Para visualizar as rotas nessa tela, você precisa primeiro cadastrar algumas, tente no botão abaixo."
+        },
+        "emptyFilter": {
+          "student":"Não encontramos nenhum aluno",
+          "title": "Não encontramos nenhuma roteirização",
+          "subtitle": "Parece que o filtro que você usou não trouxe nenhum resultado. Que tal ajustar o filtro e tentar novamente?"
+        },
+        "emptyStudent":{
+          "title": "Nenhum aluno encontrado",
+          "subtitle": "Para visualizar os alunos nessa tela, você precisa primeiro cadastrar alguns, tente no botão acima."
+        },
+        "withoutPermission": {
+          "createRouterization": "Você não tem permissão para gerar rotas",
+          "updateName": "Você não tem permissão para editar o nome da roteirização",
+          "updateLine": "Você não tem permissão para editar rota",
+          "exportKml": "Você não tem permissão para emitir arquivo de rota (KML)",
+          "createCertificate": "Você não tem permissão para gerar certificado",
+          "addStudent": "Você não tem permissão para adicionar aluno",
+          "createCostsReport": "Você não tem permissão para gerar relatório de custos",
+          "createStudentsReport": "Você não tem permissão para gerar relatório de alunos",
+          "createLinesReport": "Você não tem permissão para gerar relatório de linhas",
+          "editPavedRoads": "Você não tem permissão para editar pavimentação",
+          "addStopPoint": "Você não tem permissão para adicionar ponto de parada",
+          "addStopPointStudent": "Você não tem permissão para adicionar aluno ao ponto de parada",
+          "removeStopPointStudent": "Você não tem permissão para remover aluno do ponto de parada",
+          "editStopPoint": "Você não tem permissão para editar ponto de parada",
+          "editConfiguration": "Você não tem permissão para gerenciar parâmetros",
+          "downloadCostsReport": "Você não tem permissão para baixar relatório de custos",
+          "excluirStudents": "Você não tem permissão para excluir alunos",
+          "editarStudents": "Você não tem permissão para editar alunos"
+        },
+        "headers": {
+          "id": "id",
+          "name": "Nome da roteirização",
+          "cities": "Cidade(s)",
+          "createdAt": "Gerado em",
+          "status": "Status",
+          "actions": "Ações"
+        },
+        "status": {
+          "pending": "Gerando",
+          "failed": "Falha",
+          "done": "Concluída",
+          "text": {
+            "failed": "Sua roteirização falhou. Tente novamente gerando uma nova roteirização para poder visualizar as rotas.",
+            "pending": "Sua roteirização está sendo gerada. Aguarde mais um pouco para que você possa ver as rotas."
+          }
+        },
+        "name": "Roteirização {id}",
+        "info": {
+          "date": "Gerada em {date}"
+        },
+        "actions": {
+          "renameRouterization": {
+            "title": "Nome da roteirização",
+            "button": "Alterar nome"
+          },
+          "downloadStudentsReport": {
+            "empty": "Gerar relatório dos alunos",
+            "done": "Baixar relatório dos alunos",
+            "in_process": "Gerando relatório dos alunos",
+            "failed": "Falha ao gerar relatório dos alunos"
+          },
+          "downloadLinesReport": "Gerar relatório de linhas",
+          "routerizationDetails": "Ver rota"
+        },
+        "studentsReportFileName": "relatorio-alunos-roterizacao-{routerizationId}-{direction}",
+        "linesReportFileName": "relatorio-linhas-roterizacao-{routerizationId}-{direction}",
+        "costsReportModal": {
+          "title": "Relatório de Custos",
+          "success": "Solicitação realizada com sucesso. ",
+          "description": "Seu relatório esta sendo gerado e assim que concluído o status sera atualizado e estará disponível para download na listagem."
+        }
+      },
+      "create": {
+        "generateTitle": "Gerando roteirizações",
+        "generateBody": "Suas roteirizações: ",
+        "generateBody2": "estão sendo geradas e, assim que concluídas, o status será atualizado na listagem",
+        "title": "Gerar uma roteirização",
+        "subtitle": "Você também pode usar os filtros para visualizar a quantidade de alunos e escolas ao lado.",
+        "fields": {
+          "state": "Estado",
+          "cities": "Cidades",
+          "extraVehicles": "Veículos a serem incluídos na roteirização",
+          "schools": "Escolas",
+          "shift": "Turno",
+          "direction": "Direção",
+          "scheduleType": "Cronograma do Aluno"
+        },
+        "buttons": {
+          "submit": "Gerar rota",
+          "import_fleet": "Importar planilha de veículos próprios",
+          "only_extra_vehicles": "Usar apenas veículos extras?"
+        },
+        "modal": {
+          "title": "Adicionar frotas",
+          "content": "Use a opção de upload via arquivo CSV. Certifique-se de que o arquivo esteja no formato correto. Escolha a melhor opção para você!",
+          "actions": {
+            "downloadExample": "Download da planilha modelo",
+            "uploadByCSV": "Fazer upload de arquivo CSV"
+          }
+        },
+        "feedback": {
+          "success": "Frota importada com sucesso"
+        }
+      },
+      "details": {
+        "studentsInRoutes": "{count} alunos roteirizados",
+        "pins": {
+          "infoWindow": {
+            "name": "Nome: {name}",
+            "localization": "Localização: ",
+            "identifier": "Identificador: {identifier}",
+            "stopPointName": "Ponto de parada: {identifier}",
+            "excludedReason": "Motivo: {reason}",
+            "schoolDistance": "Distância até escola: {distance} km",
+            "schoolDuration": "Tempo até escola: {duration} min",
+            "schoolName": "Escola: {name}",
+            "address": "Endereço do aluno: {address}",
+            "specialNeedDescription": "Descrição PCD: {identifier}"
+          }
+        }
+      },
+      "lines": {
+        "edit": {
+          "directionOptions": {
+            "forwardRoute": "Ida",
+            "backRoute": "Volta"
+          },
+          "infos": {
+            "exeedWarn": "O valor da distância do recálculo ultrapassou o valor máximo inserido no parâmetro.",
+            "distanceTitle": "Distância",
+            "durationTitle": "Tempo",
+            "studentsTitle": "Alunos",
+            "schoolsTitle": "Escolas",
+            "stopPointsTitle": "Parada",
+            "excludedStudentsTitle": "Não vinculados",
+            "distanceValue": "{value} Km",
+            "durationValue": "{value} min"
+          },
+          "fields": {
+            "direction": "Direção",
+            "line": "Linha"
+          },
+          "actions": {
+            "update": "Salvar alterações",
+            "recalculate": "Recalcular rota",
+            "addStopPoint": "Adicionar Parada",
+            "editPavedRoads": "Editar pavimentação"
+          },
+          "confirmationModal": {
+            "title": "Você tem certeza que quer mudar a rota?",
+            "body": "Essa alteração não poderá ser desfeita. Após salvo, você terá que alterar novamente."
+          },
+          "confirmLeave": "Você tem alterações não salvas, deseja mesmo sair?"
+        },
+        "lineCertificate": {
+          "fileName": "roteirizacao-{routerizationId}-linha-{lineId}-{direction}",
+          "generatecertificate": "Gerar Certificado",
+          "sliders": {
+            "scale": "Escala do Mapa",
+            "font": "Tamanho da Fonte"
+          },
+          "mapInfo": {
+            "startPoint": "Ponto de partida",
+            "collectPoint": "Ponto de coleta",
+            "endStop": "Ponto final"
+          }
+        },
+        "paved": {
+          "buttons": {
+            "updateUnpavedRoads": "Atualizar vias não pavimentadas",
+            "calculateTariffCost": "Calcular custo tarifario",
+            "saveTariffCost": "Salvar custo tarifario",
+            "cancel": "Cancelar"
+          }
+        },
+        "stopPoints": {
+          "edit": {
+            "title": "Ponto de parada",
+            "warnModal": {
+              "stopPointFull": {
+                "title": "Atenção",
+                "body": "O limite de alunos no automóvel foi atingido. A adição de alunos será permitida, mas ultrapassará a capacidade do veículo!"
+              },
+              "stopPointAlmostFull": {
+                "title": "Atenção",
+                "body": "A quantidade de alunos no automóvel está próxima do limite!"
+              }
+            }
+          },
+          "create": {
+            "buttons": {
+              "newStopPoint": "Adicionar ponto",
+              "next": "Avançar",
+              "recalculate": "Recalcular rota",
+              "save": "Salvar"
+            },
+            "tabItems": {
+              "forwardRoute": "Ida",
+              "backRoute": "Volta"
+            },
+            "stopPointsListDraggable": {
+              "title": "Pontos de parada ({quantity})"
+            }
+          }
+        }
+      }
+    },
+    "configurations": {
+      "distances": "Distâncias atendidas",
+      "routes": "Rotas",
+      "schedules": "Horários",
+      "vehicles": "Capacidade veículos",
+      "feedback": {
+        "success": "Configurações salvas com sucesso"
+      },
+      "confirmationModal": {
+        "title": "Salvar alterações",
+        "body": "Você tem certeza de que deseja salvar as alterações? Ao confirmar, todas as rotas geradas daqui em diante utilizarão os dados editados"
+      },
+      "form": {
+        "excludeCloseStudents": "Identificar alunos que farão parte da rota",
+        "minimumDistance": "Distância mín.",
+        "stopPointMaxDistance": "Distância máx. aluno até embarque",
+        "schoolMaxDistance": "Raio máximo entre as escolas.",
+        "routeMaxDistance": "Distância máx.",
+        "routeMaxDistanceTolerance": "Tolerância",
+        "routeMaxDuration": "Tempo máx.",
+        "routeMaxDurationTolerance": "Tolerância",
+        "routeMaxDurationStudentsDisabilities": "Tempo máx. do aluno PCD",
+        "averageStopDuration": "Tempo médio de parada",
+        "vehicleKind": "Tipo de Veículo",
+        "vehicleCapacity": "Capacidade",
+        "vehicleWheelchairSectionCapacity": "Capacidade cadeirantes",
+        "addVehicle": "Adicionar veículo",
+        "onlySchoolsWithStudent": "Filtrar apenas escolas com estudantes",
+        "maxToleranceBetweenArrivalTimes": "Tolerância entre horários de entrada",
+        "activateGroupingOfSchoolsByArrivalTimes": "Agrupar escolas por horário de entrada",
+        "maxToleranceBetweenDepartureTimes": "Tolerância entre horários de saída",
+        "activateGroupingOfSchoolsByDepartureTimes": "Agrupar escolas por horário de saída",
+        "maxArrivalTimeTolerance": "Tolerância maxima do horário de entrada",
+        "submit": "Salvar",
+        "tooltips": {
+          "excludeCloseStudents": "Ao habilitar, o sistema excluirá da roteirização os alunos que estiverem à uma distância menor que o valor adicionado abaixo.",
+          "minimumDistance": "Quando o aluno morar à uma distância da escola menor que o valor inserido, então o aluno será excluído da roteirização.\n\nValor em metros.",
+          "stopPointMaxDistance": "Este valor será utilizado para determinar a distância máxima que o aluno poderá percorrer até o ponto de embarque.\n\nValor em metros.",
+          "schoolMaxDistance": "Raio máximo para que uma escola seja incluída em uma linha de transporte, mesmo que não tenha nenhum aluno matriculado nela.\n\nValor em metros.",
+          "routeMaxDistance": "Distância máxima que o aluno poderá permanecer em uma rota.\nNão será roteirizado caso o aluno exceda 70% desse limite.\n\nValor em quilômetros.",
+          "routeMaxDuration": "Tempo máximo que o aluno poderá permanecer em uma rota.\nNão será roteirizado caso o aluno exceda 70% desse limite.\n\nValor em minutos",
+          "routeMaxDistanceTolerance": "Tolerância adicional da distância máxima que o aluno pode permanecer na rota.\n\nValor em quilometros.",
+          "maxArrivalTimeTolerance": "Tolerância máxima do quão cedo o aluno pode chegar na escola.\n\nValor em minutos",
+          "routeMaxDurationStudentsDisabilities": "Tempo máximo que um aluno PCD deve permanecer na rota.\n\nValor em minutos",
+          "averageStopDuration": "Tempo médio por aluno que o veículo ficará ocioso no ponto de parada.\n\nValor em segundos",
+          "vehicleCapacity": "Fração dos assentos disponíveis para roteirizar",
+          "vehicleWheelchairSectionCapacity": "Quantidade de assentos para pessoas com baixa mobilidade",
+          "onlySchoolsWithStudent": "Quando habilitado, o roteirizador irá buscar apenas as escolas com alunos matriculados.",
+          "maxToleranceBetweenArrivalTimes": "Diferença máxima entre horários de entrada dos estudantes. Quando ultrapassado, uma nova linha é criada.\n\nValor em minutos.",
+          "activateGroupingOfSchoolsByArrivalTimes": "Quando habilitado, o roteirizador irá agrupar escolas por horário de entrada, e não por turno.",
+          "maxToleranceBetweenDepartureTimes": "Diferença máxima entre horários de saída dos estudantes. Quando ultrapassado, uma nova linha é criada.\n\nValor em minutos.",
+          "activateGroupingOfSchoolsByDepartureTimes": "Quando habilitado, o roteirizador irá agrupar escolas por horário de saída, e não por turno."
+        }
+      }
+    }
+  },
+  "components": {
+    "print": {
+      "header": {
+        "title": "Certificado de Composição da Roteirização"
+      },
+      "footer": {
+        "owner": "Proprietário: Município Ribas do Rio Pardo",
+        "cnpj": "CNPJ: 03.501.541/0001-91",
+        "date_of_issue": "Data de emissão: {date}"
+      },
+      "lineDetails": {
+        "lineName": "Linha {id}",
+        "shift": "Turno",
+        "schools": "Escolas",
+        "studentsCount": "Total de alunos",
+        "stopPointsCount": "Total de pontos de parada",
+        "distance": "Distância",
+        "duration": "Duração",
+        "forwardRoute": "Ida",
+        "backRoute": "Volta",
+        "extraVehicle": "Veículo extra",
+        "vehicleKind": "Tipo de veículo",
+        "vehicleCapacity": "Capacidade",
+        "vehicleLicensePlate": "Placa",
+        "true": "sim",
+        "false": "Não"
+      },
+      "stopPointsTable": {
+        "title": "Paradas",
+        "id": "id",
+        "name": "Nome",
+        "kind": "Tipo",
+        "stopPointKind": "Ponto de parada",
+        "schoolKind": "Escola",
+        "latitude": "Latitude",
+        "longitude": "Longitude",
+        "students": "Alunos"
+      },
+      "tariffCost": {
+        "title": "Custo Tarifário",
+        "direction": "Direção",
+        "forwardRoute": "Ida",
+        "backRoute": "Volta",
+        "unpavedRoadsValue": "Custo estrada não pavimentada (R$/Dia)",
+        "pavedRoadsValue": "Custo estrada pavimentada (R$/Dia)",
+        "unpavedRoadsDistance": "Distância estrada não pavimentada",
+        "pavedRoadsDistance": "Distância estrada pavimentada",
+        "fixedValue": "Custo fixo (veículo)"
+      }
+    },
+    "modals": {
+      "toleranceTimeForCostReport": {
+        "title": "Configuração reaproveitamento de veículos",
+        "label": "Horário de entrada e saída dos alunos",
+        "description": "Ao deixar desativado, será considerado o horário do turno dos alunos.",
+        "inputs": {
+          "considersStudentSchedule": {
+            "true": "Ativado",
+            "false": "Desativado"
+          },
+          "toleranceTime": {
+            "placeholder": "Tempo mínimo de folga entre os veículos",
+            "tooltip": "Ao digitar um tempo mínimo, consideraremos esse tempo de folga ao realizar o reaproveitamento de veículos\n\nValor em minutos."
+          }
+        },
+        "button": "Gerar relatório de custos"
+      },
+      "excluirStudents":"Esta ação é irreversível! O aluno será permanentemente removido do sistema e excluído de todas as roteirizações que ele pertence. Todos os seus dados serão apagados e não poderão ser recuperados.",
+      "successDelete": "Aluno excluído com sucesso",
+      "confirmationModal": {
+        "confirm": "Confirmar",
+        "cancel": "Cancelar"
+      },
+      "warnModal": {
+        "confirm": "Estou ciente"
+      },
+      "renameRouterization": {
+        "title": "Renomeie a roteirização",
+        "subtitle": "Qual o nome que você gostaria de colocar na roteirização?",
+        "labels": {
+          "name": "Nome da roteirização"
+        },
+        "button": "Salvar"
+      },
+      "availableStudents": {
+        "title": "Adicionar alunos",
+        "selectAll": "Selecionar tudo",
+        "studentCode": "Codigo do aluno: {code}",
+        "totalStudents": "{total} alunos selecionados",
+        "notFound": "Nenhum aluno encontrado",
+        "add": "Adicionar",
+        "cancel": "Cancelar"
+      },
+      "logoutModal": {
+        "title": "Sair",
+        "body": "Deseja realmente finalizar sua sessão?"
+      },
+      "newStopPointModal": {
+        "create": {
+          "title": "Adicionar ponto de parada",
+          "subtitle": "O nome do ponto é obrigatório, mas você pode reorganizar a posição do ponto no mapa.",
+          "button": "Adicionar ponto de parada",
+          "inputs": {
+            "labels": {
+              "name": "Nome do ponto de parada (Obrigatório)",
+              "lat": "Latitude",
+              "lon": "Longitude"
+            }
+          }
+        },
+        "edit": {
+          "title": "Editar ponto de parada",
+          "subtitle": "O nome do ponto é obrigatório, mas você pode reorganizar a posição do ponto no mapa.",
+          "button": "Salvar",
+          "inputs": {
+            "labels": {
+              "name": "Nome do ponto de parada (Obrigatório)",
+              "lat": "Latitude",
+              "lon": "Longitude"
+            }
+          }
+        }
+      }
+    },
+    "feedbacks": {
+      "errorListModal": {
+        "title": "Erros",
+        "close": "Fechar"
+      },
+      "spreadsheetImportErrorModal": {
+        "title": "Erro ao importar planilha",
+        "close": "Fechar",
+        "description": "Encontramos erros na submissão da sua planilha. Apenas {count} alunos foram importados com sucesso. Envie novamente corrigindo os seguintes problemas:"
+      }
+    },
+    "parametersDetails": {
+      "title": "Parâmetros",
+      "stopPointMaxDistance": "Distância máxima do aluno ao embarque",
+      "schoolMaxDistance": "Raio máximo entre as escolas",
+      "routeMaxDistance": "Distância máxima",
+      "routeMaxDuration": "Tempo máximo",
+      "averageStopDuration": "Tempo médio de parada",
+      "extraVehicles": "Capacidade de veículos extras selecionados",
+      "ownedVehicles": "Capacidade dos veículos próprios utilizados",
+      "onlySchoolsWithStudent": "Filtrar escolas com estudantes matriculados",
+      "activateGroupingOfSchoolsByArrivalTimes": "Agrupar escolas por horário de entrada",
+      "maxToleranceBetweenArrivalTimes": "Tolerância entre horários de entrada",
+      "activateGroupingOfSchoolsByDepartureTimes": "Agrupar escolas por horário de saída",
+      "maxToleranceBetweenDepartureTimes": "Tolerância entre horários de saída",
+      "maxArrivalTimeTolerance": "Tolerância maxima do horário de entrada"
+    },
+    "warningAvailableStudents": {
+      "totalStudents": "{total} alunos novos",
+      "addStudents": "Adicione-os à roteirização",
+      "addStudentsBtn": "Adicionar Alunos"
+    },
+    "availableStudentsFilter": {
+      "studentName": "Nome do aluno",
+      "school": "Nome da escola",
+      "studentCode": "Codigo do aluno"
+    },
+    "routerizationDetails": {
+      "distanceStudents": {
+        "title": "Alunos",
+        "subtitle": "Distância"
+      },
+      "countrysideStudents": {
+        "title": "Alunos",
+        "subtitle": "Zona rural"
+      },
+      "barrierStudents": {
+        "title": "Alunos",
+        "subtitle": "Barreira"
+      },
+      "wheelchairStudent": {
+        "title": "Alunos",
+        "subtitle": "Cadeirante"
+      },
+      "disabilityStudents": {
+        "title": "Alunos",
+        "subtitle": "PCD (Pessoas com Deficiência)"
+      },
+      "notInformedStudents": {
+        "title": "Alunos",
+        "subtitle": "Sem motivo informado"
+      },
+      "excludedStudents": {
+        "title": "Alunos",
+        "subtitle": "Não vinculados"
+      },
+      "schools": {
+        "title": "Escolas",
+        "subtitle": "Todas"
+      },
+      "barrierDetails": {
+        "title": "Barreira física",
+        "subtitle": "{count} barreiras"
+      }
+    },
+    "routeList": {
+      "title": "Linhas ({count})",
+      "showLines": "Mostrar Linhas",
+      "hideLines": "Ocultar Linhas"
+    },
+    "lineDetails": {
+      "extraVehicle": "Veículo Extra",
+      "ownedVehicle": "Veículo Próprio",
+      "routeName": "linha {number}",
+      "generateCertificate": "Gerar certificado",
+      "vehicleKind": "Tipo do veículo: ",
+      "vehicleCapacity": "Capacidade: ",
+      "vehicleLicensePlate": "Placa: "
+    },
+    "routeListItem": {
+      "routeName": {
+        "forwardRoute": "Ida",
+        "backRoute": "Volta"
+      },
+      "actions": {
+        "edit": "Editar rota",
+        "save": "Salvar",
+        "cancel": "Cancelar Edição",
+        "exportKml": "Emitir arquivo de rota (KML)"
+      }
+    },
+    "routeInfos": {
+      "units": {
+        "kilometers": "Km",
+        "minutes": "Minutos",
+        "students": "Alunos",
+        "schools": "Escolas"
+      }
+    },
+    "routeDetails": {
+      "certificateKml": "certificado-{kind}-roteirizacao-{route}-linha-{line}",
+      "back": "volta",
+      "forward": "ida"
+    },
+    "routerizationFilter": {
+      "cities": "Cidades",
+      "schools": "Escolas",
+      "studentCode": "Buscar nome, matrícula ou RA do aluno",
+      "routerizationId":"Buscar por Id ou Nome da Roteirização",
+      "lineId": "Buscar por número da linha",
+      "shift":"Turno",
+      "show": "Filtros"
+    },
+    "routeVehicles": {
+      "title": "Veículos ({count})",
+      "usedVehicles": "Próprios",
+      "extraVehicles": "Extras"
+    },
+    "inputs": {
+      "multiselect": {
+        "noData": "Nenhuma opção disponível",
+        "selectAll": "Selecionar tudo",
+        "allSelected": "Todas as opções",
+        "itemsSelected": "{count} selecionados"
+      }
+    },
+    "stopPointInfos": {
+      "id": "Identificador",
+      "name": "Nome",
+      "studentsCount": "Alunos Vinculados",
+      "capacity": "Limite de alunos",
+      "coordinates": "Coordenadas"
+    },
+    "stopPointsList": {
+      "title": "Pontos de parada",
+      "itemTitle": "Parada {id}",
+      "id": "Identificador",
+      "coordinates": "Coordenadas",
+      "actions": {
+        "edit": "Editar ponto de parada"
+      }
+    },
+    "studentsFilters":{
+      "name": "Buscar pelo nome do Aluno",
+      "code": "Buscar pelo matrícula ou RA do Aluno",
+      "reason" : "Motivo",
+      "specialNeed": "PCD",
+      "wheelchair": "Cadeirante",
+      "school": "Escolas",
+      "city": "Cidades",
+      "shift": "Turno",
+      "reasonOptions": {
+        "specialNeed": "Necessidade especial",
+        "countryside": "Zona rural",
+        "barrier": "Barreira",
+        "distance": "Distância",
+        "not_informed": "Não informado"
+      },
+      "shiftOptions":{
+        "morning": "Matutino",
+        "afternoon": "Vespertino",
+        "night": "Noturno",
+        "fulltime": "Integral"
+      }
+    },
+    "studentsList": {
+      "studentCode": "Código do aluno",
+      "coordinates": "Coordenada",
+      "address": "Endereço",
+      "school": "Escola",
+      "reason": "Tipo",
+      "grade": "Série",
+      "schoolDistance": "Distância até a escola",
+      "schoolDuration": "Tempo até a escola",
+      "specialNeedDescription": "Descrição PCD: {identifier}",
+      "excludedReason": "Motivo"
+    },
+    "stopPointStudentsList": {
+      "title": "Alunos vinculados",
+      "actions": {
+        "removeStudent": "Desvincular aluno",
+        "removeStudentAndStopPoint": "Desvincular aluno e excluir ponto"
+      }
+    },
+    "excludedStudentsList": {
+      "title": "Alunos desvinculados",
+      "actions": {
+        "addToStopPoint": "Vincular ao ponto"
+      }
+    },
+    "tariffCost": {
+      "sections": {
+        "paved": {
+          "title": "Trecho pavimentado"
+        },
+        "unpaved": {
+          "title": "Trecho não pavimentado"
+        },
+        "fixed": {
+          "title": "Custo fixo"
+        },
+        "total": {
+          "title": "Total da rota"
+        }
+      },
+      "roadDistance": "Tamanho do trecho",
+      "roadCost": "Custo do trecho",
+      "fixedCost": "Valor por tipo de veículo",
+      "totalDistance": "Tamanho total",
+      "totalCost": "Custo total",
+      "distance": "{distance} Km"
+    },
+    "forms": {
+      "createStudent": {
+        "sections": {
+          "student_data": "Dados do aluno",
+          "address": "Endereço",
+          "accessibility": "Acessibilidade",
+          "school": "Escola",
+          "data_transport": "Dados transporte"
+        },
+        "errors": {
+          "schoolCodeAlreadyExists": "O código da escola já existe"
+        },
+        "options": {
+          "reasonOption": {
+            "special_need": "Aluno com necessidade educacional especial",
+            "countryside": "Zona rural",
+            "barrier": "Barreira física",
+            "distance": "Distância residência e escola",
+            "not_informed": "Não informado"
+          },
+          "shiftOptions": {
+            "morning": "Matutino",
+            "afternoon": "Vespertino",
+            "night": "Noturno",
+            "fulltime": "Integral"
+          },
+          "specialNeedOptions": {
+            "yes": "Sim",
+            "no": "Não"
+          }
+        },
+        "labels": {
+          "name": "Nome do aluno",
+          "student_code": "Código do aluno",
+          "studentCode": "Matrícula do aluno",
+          "shift": "Turno",
+          "grade": "Série",
+          "address": {
+            "zip_code": "CEP",
+            "city": "Cidade",
+            "state": "Estado",
+            "street": "Endereço",
+            "number": "Numero",
+            "neighbourhood": "Bairro",
+            "complement": "Complemento",
+            "longitude": "Longitude",
+            "latitude": "Latitude"
+          },
+          "special_need": "Possui necessidade especial",
+          "special_need_description": "Tipo necessidade especial",
+          "uses_wheelchair": "Usa cadeira de rodas",
+          "new_school": "Nova escola?",
+          "school": {
+            "default": "Selecionar uma escola",
+            "school_code": "Código da escola",
+            "name": "Nome da escola",
+            "state": "Estado",
+            "city": "Cidade",
+            "address": {
+              "zip_code": "CEP",
+              "street": "Endereço",
+              "number": "Numero",
+              "neighbourhood": "Bairro",
+              "complement": "Complemento",
+              "longitude": "Longitude",
+              "latitude": "Latitude"
+            }
+          },
+          "reason": "Motivo da necessidade de transporte",
+          "barrier_code": "Código da barreira"
+        },
+        "actions": {
+          "cancel": "Cancelar",
+          "register": "Cadastrar",
+          "edit": "Editar"
+        }
+      }
+    }
+  },
+  "errors": {
+    "required": "Obrigatório",
+    "session_expired": "Para validar sua identidade, entre novamente",
+    "not_found": "Não encontrado",
+    "default": "Ops, algo deu errado, tente novamente mais tarde",
+    "not_a_number": "Precisa ser um valor numérico"
+  },
+  "globals": {
+    "yes": "Sim",
+    "no": "Não",
+    "true": "Habilitado",
+    "false": "Desativado",
+    "stopPointName": "Parada {id}",
+    "map": {
+      "bulkDelete": {
+        "enable": "Habilitar exclusão em massa",
+        "disable": "Desabilitar exclusão em massa",
+        "revertChange": "Reverter alteração",
+        "confirm": "Deseja continuar com a exclusão?"
+      },
+      "editPavedRoads": {
+        "enable": "Definir via não pavimentada",
+        "disable": "Deletar via não pavimentada",
+        "unpavedRoadNotFound": "Não foi encontrado a via não pavimentada!",
+        "errorOnDefineUnpavedRoad": "Erro ao definir via não pavimentada!",
+        "errorExistsUnpavedRoad": "Erro: Já foi definido uma pavimentação para esse vertice!",
+        "invalidVertex": "Vertice invalido!",
+        "confirm": "Deseja excluir a via não pavimentada?"
+      }
+    }
+  }
+}

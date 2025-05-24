@@ -1,0 +1,23 @@
+@media screen {
+  .only-print {
+    display: none !important;
+  }
+}
+
+@media print {
+  #BrowserPrintDefaults{display:none}
+  @page {
+    size: A4;
+    margin: 32px 60px;
+  }
+
+  html {
+    zoom: 70%;
+    overflow-y: auto !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+}
