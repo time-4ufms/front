@@ -1,0 +1,34 @@
+debugger; /* PartiallyEnd: #3632/scriptSetup.vue */
+const __VLS_ctx = {};
+let __VLS_components;
+let __VLS_directives;
+__VLS_asFunctionalElement(__VLS_intrinsicElements.svg, __VLS_intrinsicElements.svg)({
+    xmlns: "http://www.w3.org/2000/svg",
+    width: "48",
+    height: "48",
+    viewBox: "0 0 48 48",
+    fill: "none",
+});
+__VLS_asFunctionalElement(__VLS_intrinsicElements.path)({
+    d: "M40 0H8C3.58172 0 0 3.70963 0 8.28568V39.7143C0 44.2904 3.58172 48 8 48H40C44.4183 48 48 44.2904 48 39.7143V8.28568C48 3.70963 44.4183 0 40 0Z",
+    fill: "#4A2FB8",
+});
+__VLS_asFunctionalElement(__VLS_intrinsicElements.path)({
+    'fill-rule': "evenodd",
+    'clip-rule': "evenodd",
+    d: "M35.25 12H29.25C28.836 12 28.5 12.336 28.5 12.75V17.25V20.25C28.5 20.664 28.836 21 29.25 21C29.664 21 30 20.664 30 20.25V18H35.25C35.664 18 36 17.664 36 17.25V12.75C36 12.336 35.664 12 35.25 12ZM25.5 28.5C24.6735 28.5 24 27.828 24 27C24 26.172 24.6735 25.5 25.5 25.5H27.138C27.4485 26.3715 28.272 27 29.25 27C30.492 27 31.5 25.992 31.5 24.75C31.5 23.508 30.492 22.5 29.25 22.5C28.272 22.5 27.447 23.1285 27.138 24H25.5C23.8455 24 22.5 25.3455 22.5 27C22.5 28.6545 23.8455 30 25.5 30H33C33.828 30 34.5 30.672 34.5 31.5C34.5 32.328 33.828 33 33 33H19.362C19.0515 32.1285 18.228 31.5 17.25 31.5C16.008 31.5 15 32.508 15 33.75C15 34.992 16.008 36 17.25 36C18.228 36 19.053 35.3715 19.362 34.5H33C34.6545 34.5 36 33.1545 36 31.5C36 29.8455 34.6545 28.5 33 28.5H25.5ZM12 21.75C12 18.855 14.355 16.5 17.25 16.5C20.145 16.5 22.5 18.855 22.5 21.75C22.5 24.444 18.288 29.2155 17.808 29.751C17.6655 29.9085 17.463 30 17.25 30C17.037 30 16.8345 29.9085 16.692 29.751C16.212 29.2155 12 24.444 12 21.75ZM15 21.75C15 22.992 16.008 24 17.25 24C18.492 24 19.5 22.992 19.5 21.75C19.5 20.508 18.492 19.5 17.25 19.5C16.008 19.5 15 20.508 15 21.75Z",
+    fill: "white",
+});
+var __VLS_dollars;
+const __VLS_self = (await import('vue')).defineComponent({
+    setup() {
+        return {};
+    },
+});
+export default (await import('vue')).defineComponent({
+    setup() {
+        return {};
+    },
+});
+; /* PartiallyEnd: #4569/main.vue */
+//# sourceMappingURL=LineDistance.vue.js.map

@@ -32,8 +32,7 @@
   const logoutConfirm = () => {
     modalOpen.value = false;
 
-    const { logout } = useUserStore();
-    logout();
+  
   };
 </script>
 

@@ -4,11 +4,7 @@
       <h2 class="title">
         {{ title }}
       </h2>
-      <v-breadcrumbs class="breadcrumbs" v-if="items" :items="items">
-        <template #divider>
-          <v-icon icon="mdi-chevron-right" color="grey-lighten-1"></v-icon>
-        </template>
-      </v-breadcrumbs>
+      
       <div class="description" v-if="description">
         {{ description }}
       </div>
@@ -28,11 +24,7 @@
   const title = computed(() => currentRoute.value.meta.title);
   const description = computed(() => currentRoute.value.meta.description);
 
-  const items = computed(() => currentRoute.value.meta.breadcrumbItems?.map((breadcrumbItem) => ({
-    title: breadcrumbItem.title.replaceAll(/:([a-zA-Z_])+/g, (match) => (route.params?.[match.replace(':', '')] as string)),
-    to: { name: breadcrumbItem.routeName },
-    disabled: currentRoute.value.name === breadcrumbItem.routeName,
-  })));
+
 
 </script>
 <style lang="scss" scoped>

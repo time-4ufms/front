@@ -1,6 +1,8 @@
 <template>
   <nav class="sidebar">
     <div class="items-container">
+      <SideBarItem icon="mdi-home" route="Home"  title="Home"/>
+      <SideBarItem icon="mdi mdi-account-edit" route="Organizacao"  title="Organização"/>
       <SideBarItem icon="mdi-chart-box" route="Dashboard" title="Dashboard"/>
       <SideBarItem icon="mdi-account"route="Descricao" title="Descrição"/>
     </div>
@@ -9,7 +11,6 @@
 
 <script setup lang="ts">
   import SideBarItem from './SideBarItem.vue';
- 
 </script>
 
 <style lang="scss">

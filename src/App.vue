@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <div class="layout">
-      <SideBar class="no-print" />
+      <SideBar class="sidebar" />
       <main class="content">
         <router-view />
       </main>
@@ -17,7 +17,6 @@ import SideBar from '@/components/navigation/SideBar.vue';
 .layout {
   display: flex;
   height: 100vh;
-  width: 100%;
 }
 
 .no-print {
@@ -34,7 +33,9 @@ import SideBar from '@/components/navigation/SideBar.vue';
   flex-direction: column;
   gap: 20px;
 }
-
+.sidebar {
+  width: 80px;
+}
 @media (max-width: 768px) {
   .content {
     padding: 16px;
