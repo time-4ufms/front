@@ -19,10 +19,10 @@ __VLS_asFunctionalElement(__VLS_intrinsicElements.div, __VLS_intrinsicElements.d
 /** @type {[typeof SideBar, ]} */ ;
 // @ts-ignore
 const __VLS_5 = __VLS_asFunctionalComponent(SideBar, new SideBar({
-    ...{ class: "no-print" },
+    ...{ class: "sidebar" },
 }));
 const __VLS_6 = __VLS_5({
-    ...{ class: "no-print" },
+    ...{ class: "sidebar" },
 }, ...__VLS_functionalComponentArgsRest(__VLS_5));
 __VLS_asFunctionalElement(__VLS_intrinsicElements.main, __VLS_intrinsicElements.main)({
     ...{ class: "content" },
@@ -34,7 +34,7 @@ const __VLS_9 = __VLS_asFunctionalComponent(__VLS_8, new __VLS_8({}));
 const __VLS_10 = __VLS_9({}, ...__VLS_functionalComponentArgsRest(__VLS_9));
 var __VLS_3;
 /** @type {__VLS_StyleScopedClasses['layout']} */ ;
-/** @type {__VLS_StyleScopedClasses['no-print']} */ ;
+/** @type {__VLS_StyleScopedClasses['sidebar']} */ ;
 /** @type {__VLS_StyleScopedClasses['content']} */ ;
 var __VLS_dollars;
 const __VLS_self = (await import('vue')).defineComponent({

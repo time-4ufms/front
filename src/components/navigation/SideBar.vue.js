@@ -14,27 +14,51 @@ __VLS_asFunctionalElement(__VLS_intrinsicElements.div, __VLS_intrinsicElements.d
 /** @type {[typeof SideBarItem, ]} */ ;
 // @ts-ignore
 const __VLS_0 = __VLS_asFunctionalComponent(SideBarItem, new SideBarItem({
-    icon: "mdi-chart-box",
-    route: "Dashboard",
-    title: "Dashboard",
+    icon: "mdi-home",
+    route: "Home",
+    title: "Home",
 }));
 const __VLS_1 = __VLS_0({
-    icon: "mdi-chart-box",
-    route: "Dashboard",
-    title: "Dashboard",
+    icon: "mdi-home",
+    route: "Home",
+    title: "Home",
 }, ...__VLS_functionalComponentArgsRest(__VLS_0));
 /** @type {[typeof SideBarItem, ]} */ ;
 // @ts-ignore
 const __VLS_3 = __VLS_asFunctionalComponent(SideBarItem, new SideBarItem({
+    icon: "mdi mdi-account-edit",
+    route: "Organizacao",
+    title: "Organização",
+}));
+const __VLS_4 = __VLS_3({
+    icon: "mdi mdi-account-edit",
+    route: "Organizacao",
+    title: "Organização",
+}, ...__VLS_functionalComponentArgsRest(__VLS_3));
+/** @type {[typeof SideBarItem, ]} */ ;
+// @ts-ignore
+const __VLS_6 = __VLS_asFunctionalComponent(SideBarItem, new SideBarItem({
+    icon: "mdi-chart-box",
+    route: "Dashboard",
+    title: "Dashboard",
+}));
+const __VLS_7 = __VLS_6({
+    icon: "mdi-chart-box",
+    route: "Dashboard",
+    title: "Dashboard",
+}, ...__VLS_functionalComponentArgsRest(__VLS_6));
+/** @type {[typeof SideBarItem, ]} */ ;
+// @ts-ignore
+const __VLS_9 = __VLS_asFunctionalComponent(SideBarItem, new SideBarItem({
     icon: "mdi-account",
     route: "Descricao",
     title: "Descrição",
 }));
-const __VLS_4 = __VLS_3({
+const __VLS_10 = __VLS_9({
     icon: "mdi-account",
     route: "Descricao",
     title: "Descrição",
-}, ...__VLS_functionalComponentArgsRest(__VLS_3));
+}, ...__VLS_functionalComponentArgsRest(__VLS_9));
 /** @type {__VLS_StyleScopedClasses['sidebar']} */ ;
 /** @type {__VLS_StyleScopedClasses['items-container']} */ ;
 var __VLS_dollars;
