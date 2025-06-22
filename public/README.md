@@ -72,19 +72,31 @@ Obtemos a figura-1 mostrando a distribuição dos dados de idade. Como podemos n
 <table>
   <tr>
     <td align="center">
-      <img src="src/images/distribuicao_faixa_etária.png" width="100%"><br>
+      <img src="img/distribuicao_faixa_etária.png" width="100%"><br>
       <sub><b>Distribuição de idades de contas atividas</b></sub>
     </td>
-    <td align="center">
-      <img src="src/images/distribuicao_faixa_etária_contas_desativadas.png" width="100%"><br>
+    
+  </tr>
+  <tr>
+</table>
+<table>
+<tr>
+<td align="center">
+      <img src="img/distribuicao_faixa_etária_contas_desativadas.png" width="100%"><br>
       <sub><b>Distribuição de idades de contas atividas</b></sub>
-    </td>
-    <td align="center">
-      <img src="src/images/distribuicao_faixa_etária_total.png" width="100%"><br>
-      <sub><b>Distribuição de idades no total</b></sub>
     </td>
   </tr>
 </table>
+<table>
+<tr>
+<td align="center">
+      <img src="img/distribuicao_faixa_etária_total.png" width="100%"><br>
+      <sub><b>Distribuição de idades no total</b></sub>
+    </td>
+    </tr>
+</tabel>
+
+
 
 O que também é constatado é que a distribuição se conserva mesmo se tratando de contas atividas ou desativadas
 
@@ -101,14 +113,14 @@ O que também é constatado é que a distribuição se conserva mesmo se tratand
       </h3>
     </td>
     <td align="center">
-      <img src="src/images/mapa_regioes_brasil.png" width="80%"><br>
+      <img src="img/mapa_regioes_brasil.png" width="80%"><br>
       <sub>
         <b>Regiões do Brasil</b><br>
         Fonte: https://www.todamateria.com.br/regioes-brasileiras/
       </sub>
     </td>
     <td align="center">
-      <img src="src/images/mapa_investidor_total.png" width="100%"><br>
+      <img src="img/mapa_investidor_total.png" width="100%"><br>
       <sub><b>Distribuição de investidores por estado</b></sub>
     </td>
   </tr>

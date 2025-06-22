@@ -61,5 +61,7 @@
             código é integrado e testado automaticamente em um repositório compartilhado. Isso permite que a equipe
             identifique problemas rapidamente e mantenha a qualidade do código.</p>
         <p style="margin-top: 20px;margin-bottom: 20px; font-size: 20px;">No projeto, a Integração Contínua foi em as alterações e incrementos nos códigos eram associados frequentemente nos repositórios centrais data, frontend, backend e docs, como pode ser visto através dos números de commits e pull-requests dos repositórios através desse link.</p>
+        <br>
+        <br>
     </div>
 </template>

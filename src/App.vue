@@ -16,7 +16,7 @@ import SideBar from '@/components/navigation/SideBar.vue';
 <style scoped lang="scss">
 .layout {
   display: flex;
-  height: 100vh;
+  height: 100%;
 }
 
 .no-print {
@@ -27,7 +27,6 @@ import SideBar from '@/components/navigation/SideBar.vue';
 
 .content {
   flex: 1;
-  padding: 32px;
   overflow-y: auto;
   display: flex;
   flex-direction: column;

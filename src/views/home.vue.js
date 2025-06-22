@@ -24,10 +24,10 @@ const participantes = [
         linkedin: "https://www.linkedin.com/in/rafaelborgesazevedo/"
     },
     {
-        nome: "",
-        formacao: "",
+        nome: "Paula O Gomes Abrahão",
+        formacao: "Sistemas de Informação",
         cargo: "👑 Mentora",
-        linkedin: ""
+        linkedin: "https://www.linkedin.com/in/paula-abrahao"
     }
 ];
 debugger; /* PartiallyEnd: #3632/scriptSetup.vue */

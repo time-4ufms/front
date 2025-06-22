@@ -1,3 +1,2 @@
 <template>
-    <h1>AQUI VAI O POWERBI</h1>
-</template>
+<iframe width="100%" height="100%" src="https://lookerstudio.google.com/embed/reporting/2b6db3a4-3ea0-419e-8ef5-bdb98429e980/page/xErOF" frameborder="0" style="border:0" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe></template>
