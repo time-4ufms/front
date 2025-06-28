@@ -26,7 +26,7 @@
 
         <div style="display: flex; justify-content: space-around; flex-wrap: wrap; margin-top: 20px;">
             <div v-for="participante in participantes" :key="participante.nome"
-                style="text-align: center; margin: 10px; cursor: pointer; font-size: 18px;">
+                style="text-align: center; margin: 8px; cursor: pointer; font-size: 16px;">
                 <a :href="participante.linkedin" target="_blank" style="text-decoration: none; color: inherit;">
                     <strong style="color: blue;">{{ participante.nome }}</strong>
                     <div style="color: blue;">{{ participante.formacao }}</div>
@@ -40,6 +40,12 @@
 
 <script setup>
 const participantes = [
+     {
+        nome: "Catarina Ludmila Nogueira Freisleben",
+        formacao: "Engenharia de Software",
+        cargo: "Engenheira de Software",
+        linkedin: "https://www.linkedin.com/in/catarina-freisleben/"
+    },
     {
         nome: "Fabio Bastista Rodrigues",
         formacao: "Sistemas de Informação",

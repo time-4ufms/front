@@ -94,32 +94,35 @@ Obtemos a figura-1 mostrando a distribuição dos dados de idade. Como podemos n
       <sub><b>Distribuição de idades no total</b></sub>
     </td>
     </tr>
-</tabel>
+</table>
+
+
 
 
 
 O que também é constatado é que a distribuição se conserva mesmo se tratando de contas atividas ou desativadas
 
 ## Agrupando por estado podemos ver os que mais se destacam na participação da base de dados
-<table>
+<table width="100%">
   <tr>
-    <td align="left">
-      <!-- <img src="images/mapa_investidor_total.png" width="100%"><br> -->
-      <h1><b>Quantidade de investidores vs IDH-M 2021</b></h1>
+    <td colspan="2" align="left">
+      <h2><b>Quantidade de investidores vs IDH-M 2021</b></h2>
       <h3>
-      Correlação de Pearson: 0.570 <br>
-      P-valor: 0.00192 <br>
-      Correlação de Spearman: 0.681325
+        Correlação de Pearson: 0.570 <br>
+        P-valor: 0.00192 <br>
+        Correlação de Spearman: 0.681325
       </h3>
     </td>
-    <td align="center">
+  </tr>
+  <tr>
+    <td align="center" width="50%">
       <img src="img/mapa_regioes_brasil.png" width="80%"><br>
       <sub>
         <b>Regiões do Brasil</b><br>
         Fonte: https://www.todamateria.com.br/regioes-brasileiras/
       </sub>
     </td>
-    <td align="center">
+    <td align="center" width="50%">
       <img src="img/mapa_investidor_total.png" width="100%"><br>
       <sub><b>Distribuição de investidores por estado</b></sub>
     </td>
@@ -128,5 +131,104 @@ O que também é constatado é que a distribuição se conserva mesmo se tratand
 
 
 
+
+## 📊 Distribuição percentual das profissões por estado
+
+Este gráfico mostra como as profissões estão distribuídas percentualmente em cada estado, com base nos dados dos investidores do Tesouro Direto.
+
+<p align="center">
+  <img src="img/distribuicao_profissoes_por_estado.png" alt="Distribuição das profissões por estado" width="100%">
+</p>
+
+O que indica um comportamento bem diferente para cada profissão por estado.
+---
+## Construção do macrogrupo de profissões
+
+### Para a criação desses grupos foram utilizadas modelos de linguagem generativas (LLMs) com o auxilio humano conferindo e supervisionando o processo acelerando a discretização dos dados.
+#### Segue o exemplo a seguir
+```python
+profissoes_agrupadas = {
+    "Não CLTs": ["PROFISSIONAL LIBERAL", 'TRABALHADOR AUTÔNOMO'],
+    "Outros": [
+        "OUTROS", "Não se aplica", "FALECIDO"
+    ],
+    "Aposentados e Pensionistas": [
+        "APOSENTADO (EXCETO FUNCIONÁRIO PÚBLICO)",
+        "FUNCIONÁRIO PÚBLICO CIVIL APOSENTADO",
+        "MILITAR REFORMADO", "PENSIONISTA"
+    ],
+    "Estudantes e Bolsistas": [
+        "BOLSISTA, ESTAGIÁRIO E ASSEMELHADOS", "ESTUDANTE"
+    ],
+    "Funcionários Públicos": [
+        "SERVIDOR PÚBLICO FEDERAL", "SERVIDOR PÚBLICO MUNICIPAL", "SERVIDO PÚBLICO ESTADUAL",
+        "FUNCIONÁRIO PÚBLICO CIVIL APOSENTADO",
+        "OCUPANTE DE CARGO DE DIREÇAO E ASSESSORAMENTO SUPERIOR",
+        "OCUPANTE DE CARGO DE DIREÇAO E ASSESSORAMENTO INTERMEDIÁRIO",
+        "MEMBRO DO PODER JUDICIÁRIO: MINISTRO DE TRIB. SUPERIOR",
+        "MEMBRO DO PODER LEGISLATIVO: SENADOR, DEP.FED.E ESTADUAL",
+        "MEMBRO DO PODER EXECUTIVO: PRES.REPÚBLICA, MINISTRO ETC.",
+        "DELEGADO DE POLÍCIA", "FISCAL"
+    ]
+}
+...
+```
+### Com esses grupos criados, foram criados os macrogrupos de profissoes
+#### Segue o exemplo a seguir
+```python
+macrogrupo_para_grupos = {
+    'Economia, Negócios e Administração': [
+        'Contabilidade e Finanças',
+        'Administração e Negócios',
+        'Comércio e Vendas',
+        'Proprietários e Renda Passiva',
+        'Direção e Liderança'
+    ],
+    'Serviços Públicos e Segurança': [
+        'Funcionários Públicos',
+        'Forças de Segurança e Defesa',
+        'Religião e Assistência Social',
+        'Direito e Justiça'
+    ],
+    'Educação, Ciência e Pesquisa': [
+        'Educação e Pesquisa',
+        'Ciências Naturais e Exatas',
+        'Ciências Exatas e Humanas',
+        'Estudantes e Bolsistas'
+    ]
+}
+...
+```
+
+## Classificador
+
+### Foram utilizadas algumas tecnicas para a classificação que corroboram com os agrupamentos montados 
+A principio é esperado que seja criado um modelo que prediza a profissao do individuo a cerca dos incadores
+A tabela a seguir mostra os resultados obtidos a cerca dessa discussão
+<table>
+  <tr>
+    <td align="left">
+      <!-- <img src="images/mapa_investidor_total.png" width="100%"><br> -->
+      <h3><b>Quantidade de investidores vs IDH-M 2021</b></h3>
+      <p>
+      Acurácia Decision Tree: 0.15306122448979592 <br>
+      Acurácia Random Forest: 0.16326530612244897 <br>
+      Acurácia XGBoost: 0.22448979591836735 <br>
+      Acurácia CatBoost: 0.2653061224489796 <br>
+      Obs.: a acuracia baixa pode ser explicada pela quantidade dos dados: 12 macrogrupos × 27 estados = 324 amostras 
+      </p>
+    </td>
+  </tr>
+</table>
+    <td align="center">
+      <img src="img/classification_report_xgb_human_density_vs_work.png" width="100%"><br>
+      <sub>
+        Relatorio de classficação utilizando xgb (melhor desempenho) tendo como alvo macroprofissoes 
+      </sub>
+    </td>
+    <td align="center">
+      <img src="img/classification_report_xgb_density_vs_work_confusion_matrix.png" width="100%"><br>
+      <sub><b>Matrix de confusão para macrogrupos de profissoes</b></sub>
+    </td>
 
 
